@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ANKORU</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(180deg, #FF9DD2 0%, #F7F1FF 25%, #ECECFF 60%, #9DA1FF 100%);
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+
+.grid-guide div {
+  height: 120px;
+  background: rgba(255, 157, 210, 0.25);
+  border: 1px dashed #FF9DD2;
+}
+
+
+a {
+  color: #FF9DD2;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a:active {
+  color: #9DA1FF;
+}
+
+a:visited {
+  opacity: 0.9;
+}
+
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  z-index: 2000;
+}
+
+.header img {
+  height: 50px;
+}
+
+.nav a {
+  margin: 0 18px;
+  color: #9DA1FF;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.hide-nav {
+  transform: translateY(-120%);
+  transition: 0.4s ease;
+}
+
+.show-nav {
+  transform: translateY(0%);
+  transition: 0.4s ease;
+}
+
+
+.hero {
+  margin-top: 140px;
+  text-align: center;
+}
+
+.hero img {
+  width: 85%;
+  max-width: 980px;
+  border-radius: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.hero h1 {
+  color: white;
+  margin-top: 25px;
+  font-size: 38px;
+  font-weight: 700;
+  text-shadow: 0 2px 5px #FF9DD2;
+}
+
+
+.section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+.card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(6px);
+  border-radius: 25px;
+  padding: 40px;
+  margin-top: 35px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  border-left: 6px solid #FF9DD2;
+}
+
+.card img {
+  float: left;
+  width: 35%;
+  max-width: 260px;
+  margin-right: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+
+.personajes-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+	
+.personajes-section h2 {
+  color: #9DA1FF;
+  font-size: 55px;
+  border-left: 6px solid #FF9DD2;
+  padding-left: 15px;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+
+.personajes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.personaje-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 25px;
+  padding: 18px;
+  border: 3px solid #FF9DD2;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.personaje-card:hover {
+  transform: scale(1.04);
+}
+
+.personaje-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.tiles {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(270px,1fr));
+  margin-top: 40px;
+}
+
+.tile {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(4px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  border-left: 6px solid #9DA1FF;
+  text-align: center;
+  font-size: 30px;
+}
+
+footer {
+  margin-top: 120px;
+  padding: 50px;
+  text-align: center;
+  background: linear-gradient(90deg, #9DA1FF, #FF9DD2);
+  color: white;
+}
+
+footer img {
+  height: 70px;
+}
+	
+footer a {
+  color:white
+}
+	
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <img src="LOGO.png" alt="Logo ANKORU">
+  <nav class="nav">
+    <a href="../Index.html">Inicio</a>
+    <a href="Historia/Historia.html">Historia</a>
+    <a href="../Estrellas/Estrellas.html">Estrellas</a>
+    <a href="../Galeria/galeria.html">Galería</a>
+    <a href="sns.html">SNS</a>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <img src="Banner.png" alt="Banner ANKORU">
+  <h1>Redes sociales</h1>
+  <p>¡No te pierdas de nuestro contenido!</p>
+</section>
+
+<section class="section">
+  <div class="tiles">
+    <div class="tile">
+      <h3><a href="https://www.facebook.com/ANKORUcovers">FACEBOOK</a></h3>
+    </div>
+
+    <div class="tile">
+      <h3><a href="https://www.youtube.com/@ID_ANKORU">YOUTUBE</a></h3>
+    </div>
+
+    <div class="tile">
+      <h3><a href="https://www.tiktok.com/@id_ankoru">TIKTOK</a></h3>
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+  <img src="LOGO.png">
+  <p><a href="#inicio">Volver arriba</a></p>
+</footer>
+
+<script>
+
+let lastScroll = 0;
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+  const current = window.pageYOffset;
+  if (current > lastScroll) {
+    header.classList.add('hide-nav');
+  } else {
+    header.classList.remove('hide-nav');
+  }
+  lastScroll = current;
+});
+</script>
+
+</body>
+</html>
+
+
